@@ -1,0 +1,36 @@
+{
+  "name": "ecom.com",
+  "version": "1.0.0",
+  "description": "ecommerce website",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --watch backend --exec babel-node backend/server.js",
+    "build": "rm -rf dist && babel backend -d dist  && cd frontend && npm install && npm run build",
+    "heroku-postbuild": "npm run build && cd frontend && npm install && npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "install": "^0.13.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.11.15",
+    "nodemon": "^2.0.7",
+    "react-paypal-button-v2": "^2.6.3",
+    "serve": "^12.0.0",
+    "@babel/cli": "^7.13.0",
+    "@babel/core": "^7.13.8",
+    "@babel/node": "^7.12.16",
+    "@babel/preset-env": "^7.13.9"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.13.0",
+    "@babel/core": "^7.13.8",
+    "@babel/node": "^7.12.16",
+    "@babel/preset-env": "^7.13.9",
+    "nodemon": "^2.0.7"
+  }
+}

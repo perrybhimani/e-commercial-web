@@ -1,0 +1,4 @@
+node_modules/
+template/
+frontend/node_modules
+.env
