@@ -25,12 +25,19 @@ const listProducts = (
  
   try {
     dispatch({ type: PRODUCT_LIST_REQUEST });
-    const { data } = await axios.get('/api/products?searchKeyword=' + searchKeyword+'&sortOrder='+sortOrder);
+    let { data } = await axios.get('/api/products?searchKeyword=' + searchKeyword+'&sortOrder='+sortOrder);
     console.log("api:-"+ searchKeyword);
-    if(searchKeyword.length>1){
+    if(searchKeyword.length>1) {
+      if(['Laptops', 'MobilePhones'].includes(sortOrder)) {
+        data = data.filter(e => e.category === sortOrder)
+      }
       dispatch({ type: PRODUCT_LIST_SUCCESS, payload:  data, List:'SearchPage List'});
     }
     else{
+      console.log('condition', ['Laptops', 'MobilePhones'].includes(sortOrder) )
+      if(['Laptops', 'MobilePhones'].includes(sortOrder)) {
+        data = data.filter(e => e.category === sortOrder)
+      }
       dispatch({ type: PRODUCT_LIST_SUCCESS, payload: data, List:"HomePage List"});
     }
 

@@ -94,11 +94,16 @@ li {
   height: 100%;
 }
 .product-name {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: bold;
 }
+.category {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #203040;
+}
 .product-brand {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   color: #808080;
 }
 .product-price {
@@ -106,8 +111,8 @@ li {
   font-weight: bold;
 }
 .product-image {
-  width: 34rem;
-  height: 34rem;
+  max-width: 33rem;
+  height: 33rem;
 }
 .product-rating {
   margin-bottom: 1rem;
